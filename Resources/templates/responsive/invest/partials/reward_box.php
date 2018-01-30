@@ -31,16 +31,8 @@ $available = $reward->available();
 
             <div class="amount-box">
 
-                <div class="row col-sm-10 col-sm-offset-2 margin-2" id="amount-container">
-                    <div class="col-sm-1 col-sm-offset-1 no-padding col-xs-1">
-                        <strong class="reward-amount"><?= $this->get_currency('html') ?></strong>
-                    </div>
-                    <div class="no-padding container-input-amount col-sm-4 col-xs-10">
-                        <input type="number" class="form-control input-amount" name="amount" value="<?= $this->amount ? $this->amount : amount_format($reward->amount, 0, true) ?>" id="amount" min="<?= amount_format($reward->amount, 0, true) ?>" required>
-                    </div>
-                    <div class="col-sm-5 col-sm-offset-1 reward-button">
-                        <button type="submit" class="btn btn-block btn-success col-xs-3 margin-2"><?= $this->text('invest-button') ?></button>
-                    </div>
+                <div class="col-sm-5 col-sm-offset-2 reward-button">
+                    <button type="submit" class="btn btn-block pink col-xs-3 margin-2"><?= $this->text('invest-button') ?></button>
                 </div>
             </div>
 
