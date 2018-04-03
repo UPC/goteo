@@ -31,6 +31,8 @@ $available = $reward->available();
 
             <div class="amount-box">
 
+                <input type="hidden" name="amount" value="<?= amount_format($reward->amount, 0, true) ?>" id="amount" required>
+
                 <div class="col-sm-5 col-sm-offset-2 reward-button">
                     <button type="submit" class="btn btn-block pink col-xs-3 margin-2"><?= $this->text('invest-button') ?></button>
                 </div>
