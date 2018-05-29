@@ -173,7 +173,7 @@ class InvestController extends \Goteo\Core\Controller {
         // A login or a fake login is required here
         if($login_required === 'auto') $login_required = !$this->skip_login;
         if($login_required && !$this->getUser()) {
-            return $this->redirect('/invest/' . $project->id . '/signup?' . $this->query);
+            return $this->redirect('/invest/' . $project->id . '/login?' . $this->query);
         }
 
         // If invest defined, check user session
@@ -298,7 +298,7 @@ class InvestController extends \Goteo\Core\Controller {
         $email = $request->query->has('email');
         $reward = $this->validate($project_id, $request->query->get('reward'), $amount, null, 'auto');
         if(!($this->skip_login && $email) && !Session::isLogged()) {
-            return $this->redirect('/invest/' . $this->project->id . '/signup?' . $this->query);
+            return $this->redirect('/invest/' . $this->project->id . '/login?' . $this->query);
         }
 
         if($reward instanceOf Response) return $reward;
