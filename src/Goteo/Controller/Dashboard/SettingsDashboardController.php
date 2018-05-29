@@ -44,7 +44,6 @@ class SettingsDashboardController extends DashboardController {
     protected function createSettingsSidebar($zone = '') {
         // Create sidebar menu
         Session::addToSidebarMenu( '<i class="icon icon-2x icon-user"></i> ' . Text::get('dashboard-menu-profile-profile'), '/dashboard/settings', 'profile');
-        Session::addToSidebarMenu( '<i class="fa fa-2x fa-fw fa-legal"></i> ' . Text::get('dashboard-menu-profile-personal'), '/dashboard/settings/personal', 'personal');
         // Session::addToSidebarMenu( '<i class="fa fa-2x fa-fw fa-location-arrow"></i> ' . Text::get('dashboard-menu-profile-location'), '/dashboard/profile/location', 'location');
         Session::addToSidebarMenu( '<i class="fa fa-2x fa-fw fa-user-secret"></i> ' . Text::get('dashboard-menu-profile-access'), '/dashboard/settings/access', 'access');
         Session::addToSidebarMenu( '<i class="fa fa-2x fa-fw fa-toggle-on"></i> ' . Text::get('dashboard-menu-profile-preferences'), '/dashboard/settings/preferences', 'preferences');
