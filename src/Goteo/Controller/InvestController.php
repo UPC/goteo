@@ -574,6 +574,8 @@ class InvestController extends \Goteo\Core\Controller {
             return $this->dispatch(AppEvents::INVEST_FINISHED, new FilterInvestFinishEvent($invest, $request))->getHttpResponse();
         }
 
+        // Proceed without checking address, etc.
+        return $this->dispatch(AppEvents::INVEST_FINISHED, new FilterInvestFinishEvent($invest, $request))->getHttpResponse();
         // check post data
         $invest_address = (array)$invest->getAddress();
         $errors = [];
