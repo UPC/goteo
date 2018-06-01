@@ -39,12 +39,12 @@ namespace Goteo\Model\Project {
                     return $url;
                 }
                 if(stripos($url, 'goteo.org') === 0) {
-                    return 'http://' . $url;
+                    return 'https://' . $url;
                 }
                 if(stripos($url, '/') !== 0) {
                     $url = '/' . $url;
                 }
-                return 'http://goteo.org' . $url;
+                return 'https://goteo.org' . $url;
             return '';
             }
         }

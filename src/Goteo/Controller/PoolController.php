@@ -350,8 +350,8 @@ class PoolController extends \Goteo\Core\Controller {
         $share_title = Text::get('pool-invest-spread-social');
 
         $share_url = $URL . '/pool';
-        $facebook_url = 'http://facebook.com/sharer.php?u=' . urlencode($share_url) . '&t=' . urlencode($share_title);
-        $twitter_url = 'http://twitter.com/home?status=' . urlencode($share_title . ': ' . $share_url);
+        $facebook_url = 'https://facebook.com/sharer.php?u=' . urlencode($share_url) . '&t=' . urlencode($share_title);
+        $twitter_url = 'https://twitter.com/home?status=' . urlencode($share_title . ': ' . $share_url);
 
         $user=Session::getUserId();
 

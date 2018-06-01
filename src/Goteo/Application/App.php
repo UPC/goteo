@@ -133,13 +133,13 @@ class App extends HttpKernel\HttpKernel {
             if (Config::get('ssl')) {
                 define('SEC_URL', 'https://'.$SITE_URL);
                 if ($request->isSecure() || Session::isLogged()) {
-                    define('SITE_URL', 'http://'.$SITE_URL);
+                    define('SITE_URL', 'https://'.$SITE_URL);
                 } else {
-                    define('SITE_URL', 'http://'.$SITE_URL);
+                    define('SITE_URL', 'https://'.$SITE_URL);
                 }
             } else {
-                define('SEC_URL', 'http://'.$SITE_URL);
-                define('SITE_URL', 'http://'.$SITE_URL);
+                define('SEC_URL', 'https://'.$SITE_URL);
+                define('SITE_URL', 'https://'.$SITE_URL);
             }
             // Setup request for views
             \Goteo\Util\Foil\Extension\GoteoCore::setRequest($request);

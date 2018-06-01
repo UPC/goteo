@@ -102,7 +102,7 @@ namespace Goteo\Controller\Dashboard {
             //tratar nueva web
             if (!empty($_POST['web-add'])) {
                 $user->webs[] = new Model\User\Web(array(
-                            'url' => 'http://'
+                            'url' => 'https://'
                         ));
             }
             /// este es el único save que se lanza desde un metodo process_
