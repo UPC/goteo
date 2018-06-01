@@ -37,7 +37,7 @@ class Cookie {
 
     static function getDomain() {
         $url = Config::get('url.main');
-        if(strpos($url, '//') === 0) $url = "http:$url";
+        if(strpos($url, '//') === 0) $url = "https:$url";
         $host = parse_url($url, PHP_URL_HOST);
         return $host;
     }
