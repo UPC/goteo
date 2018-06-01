@@ -34,12 +34,6 @@ $dash->add('dashboard-rewards', new Route(
     array('_controller' => 'Goteo\Controller\DashboardController::myRewardsAction',
         )
 ));
-// Virtual wallet
-$dash->add('dashboard-wallet', new Route(
-    '/wallet',
-    array('_controller' => 'Goteo\Controller\DashboardController::walletAction',
-        )
-));
 
 // AJAX utils
 $dash->add('dashboard-ajax-projects-interests', new Route(

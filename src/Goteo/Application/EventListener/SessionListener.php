@@ -191,7 +191,6 @@ class SessionListener extends AbstractListener {
         // Minimal User menu
         Session::addToUserMenu('<i class="icon icon-activity"></i> ' . Text::get('dashboard-menu-activity'), '/dashboard/activity', 'dashboard-activity', 20);
         Session::addToUserMenu('<i class="icon icon-projects"></i> ' . Text::get('dashboard-menu-projects'), '/dashboard/projects', 'dashboard-projects', 30);
-        Session::addToUserMenu('<i class="icon icon-wallet"></i> ' . Text::get('dashboard-menu-pool'), '/dashboard/wallet', 'dashboard-wallet', 40);
         Session::addToUserMenu('<i class="icon icon-settings"></i> ' . Text::get('dashboard-menu-profile-preferences'), '/dashboard/settings', 'dashboard-setting', 50);
 
         if($user = Session::getUser()) {
