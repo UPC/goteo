@@ -288,7 +288,7 @@ class UserProfileForm extends AbstractFormProcessor {
         $data['webs'] = array_map(function($el) {
                 $url = trim($el);
                 if(!$url) return null;
-                if($url && stripos($url, 'http') !== 0) $url = 'http://' . $url;
+                if($url && stripos($url, 'http') !== 0) $url = 'https://' . $url;
                 return new Web(['url' => $url]);
             }, explode("\n", $data['webs']));
 

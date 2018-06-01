@@ -218,7 +218,7 @@ class ProjectController extends \Goteo\Core\Controller {
             $viewData['social_rewards'] = [];
             foreach ($project->getSocialRewards() as $reward) {
                 if($reward->url && stripos($reward->url, 'http') !== 0) {
-                    $reward->url = 'http://' .  $reward->url;
+                    $reward->url = 'https://' .  $reward->url;
                 }
                 if ($reward->bonus) {
                     $viewData['bonus_rewards'][] = $reward;

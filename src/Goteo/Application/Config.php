@@ -471,7 +471,7 @@ class Config {
 			$url = "//$lang." . self::get('url.url_lang');
 		}
 		if (strpos($url, '//') === 0) {
-			$url = 'http:' . $url;
+			$url = 'https:' . $url;
 		}
 		if (self::get('ssl')) {
 			$url = str_ireplace('http://', 'https://', $url);
@@ -486,7 +486,7 @@ class Config {
     static public function getMainUrl($schema=true) {
         $url = self::get('url.main');
         if(strpos($url, '//') === 0) {
-            $url = (self::get('ssl') ? 'https:' : 'http:') . $url;
+            $url = 'https:' . $url;
         }
         if(!$schema) {
             $url = preg_replace('!^[a-z]*://!', '', $url);

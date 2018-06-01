@@ -307,7 +307,7 @@ class Lang {
         }
         // echo "[$url][$url_lang] [$path]";die;
         if($url_lang) {
-            $url = (Config::get('ssl') ? 'https://' : 'http://');
+            $url = 'https://';
             $url .= ( Config::get('lang') == $lang ? 'www' : $lang) . '.';
             $url .= $url_lang;
         }

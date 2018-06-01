@@ -374,7 +374,8 @@ class Image extends \Goteo\Core\Model {
         else                          $link = SITE_URL . '/img/' . $path;
 
         if ($http && substr($link, 0, 2) == '//') {
-            $link = (Config::get('ssl') ? 'https:' : 'http:').$link;
+            //$link = (Config::get('ssl') ? 'https:' : 'http:').$link;
+            $link = 'https:'.$link;
         }
 
         return $link;
@@ -409,7 +410,7 @@ class Image extends \Goteo\Core\Model {
 
             $file = SRC_URL . '/' . $file;
             if(substr($file, 0, 2) === '//') {
-                $file = (Config::get('ssl') ? 'https:' : 'http:' ) . $file;
+                $file = 'https:'.$file;
             }
         }
         else {

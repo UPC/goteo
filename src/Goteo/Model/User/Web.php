@@ -29,7 +29,8 @@ class Web extends \Goteo\Core\Model {
             $query = static::query("SELECT id, user, url FROM user_web WHERE user = ?", array($id));
             foreach ($query->fetchAll(\PDO::FETCH_CLASS, __CLASS__) as $web) {
                 if (substr($web->url, 0, 4) != 'http') {
-                    $web->url = 'http://'.$web->url;
+                    $web->url = 'https://'.$web->url;
+                    $web->url = str_replace('http://', 'https://', $web->url);
                 }
                 $list[$web->id] = $web;
             }
