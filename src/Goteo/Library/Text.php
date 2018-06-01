@@ -442,8 +442,8 @@ class Text {
         $author = !empty($author_twitter) ? ' '.self::get('regular-by').' @'.$author_twitter.' ' : '';
 
         $urls = array(
-            'twitter' => 'http://twitter.com/home?status=' . rawurlencode($title . $author.': ' . $url . ' #Goteo'),
-            'facebook' => 'http://facebook.com/sharer.php?u=' . rawurlencode($url . '&t=' . rawurlencode($title))
+            'twitter' => 'https://twitter.com/home?status=' . rawurlencode($title . $author.': ' . $url . ' #Goteo'),
+            'facebook' => 'https://facebook.com/sharer.php?u=' . rawurlencode($url . '&t=' . rawurlencode($title))
         );
 
         return $urls;
@@ -455,7 +455,7 @@ class Text {
      */
     static public function GmapsLink($location)
     {
-        $texto = '<a href="http://maps.google.es/maps?q='.htmlspecialchars(rawurlencode($location)).'&hl=es" target="_blank">'.htmlspecialchars($location).'</a>';
+        $texto = '<a href="https://maps.google.es/maps?q='.htmlspecialchars(rawurlencode($location)).'&hl=es" target="_blank">'.htmlspecialchars($location).'</a>';
         return $texto;
     }
 
@@ -681,7 +681,7 @@ class Text {
                 else
                 {
                     // Prepend http:// if no scheme is specified
-                    $completeUrl = $scheme ? $url : "http://$url";
+                    $completeUrl = $scheme ? $url : "https://$url";
                     $linkText = "$domain$port$path";
                 }
 

@@ -23,7 +23,7 @@ class GoogleGeocoder {
     public static function getCoordinates(Array $params) {
         $params = $params + array('sensor' => 'false');
 
-        $url = 'http://maps.googleapis.com/maps/api/geocode/json?' . http_build_query($params);
+        $url = 'https://maps.googleapis.com/maps/api/geocode/json?' . http_build_query($params);
         // echo "URL: $url\n";
         $result = json_decode(file_get_contents($url), true);
         $data = array();

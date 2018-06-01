@@ -183,7 +183,7 @@ class Document extends \Goteo\Core\Model {
         $link = '/document/' . $this->id . '/' . $this->name;
 
         if ($http && substr($link, 0, 2) == '//') {
-            $link = (Config::get('ssl') ? 'https:' : 'http:').$link;
+            $link = 'https:'.$link;
         }
 
         return $link;

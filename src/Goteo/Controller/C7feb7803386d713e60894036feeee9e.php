@@ -112,7 +112,7 @@ namespace Goteo\Controller {
             }
 
             if (strpos($value, 'http') !== 0) {
-                $value = 'http://' . $value;
+                $value = 'https://' . $value;
             }
 
             $isValidUrl = filter_var($value, FILTER_VALIDATE_URL);
