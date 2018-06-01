@@ -22,7 +22,7 @@
 
         echo $this->form_row($form['phone']);
 
-        echo '<div class="form-group spacer-10">
+        echo '<div class="form-group spacer-10" style="display:none">
           <div class="material-switch">
               <input id="paypal_switch" type="checkbox"' . ($form['paypal']->vars['value'] ? ' checked="true"' : '') . '>
               <label for="paypal_switch" class="label-cyan"></label>
