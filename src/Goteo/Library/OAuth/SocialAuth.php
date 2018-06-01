@@ -61,10 +61,10 @@ class SocialAuth {
 
 	public $openid_public_servers = array(
 		"Yahoo" => "https://me.yahoo.com",
-		"myOpenid" => "http://myopenid.com/",
+		"myOpenid" => "https://myopenid.com/",
 		"AOL" => "https://www.aol.com",
 		"Ubuntu" => "https://login.ubuntu.com",
-		"LiveJournal" => "http://www.livejournal.com/openid/server.bml",
+		"LiveJournal" => "https://www.livejournal.com/openid/server.bml",
 	 );
 
 	/**
@@ -72,8 +72,8 @@ class SocialAuth {
 	 * */
 	function __construct($provider='') {
         $URL = Config::get('url.url_lang') ? Config::get('url.url_lang') : Config::get('url.main');
-        if(substr($URL, 0, 2) === '//') $URL = HTTPS_ON ? "https:$URL" : "http:$URL";
-        if(substr(strtolower($URL), 0, 4) !== 'http') $URL = HTTPS_ON ? "https://$URL" : "http://$URL";
+        if(substr($URL, 0, 2) === '//') $URL = "https:$URL";
+        if(substr(strtolower($URL), 0, 4) !== 'http') "https://$URL";
         $this->host = $URL;
 
 		$this->original_provider = $provider;
@@ -241,7 +241,7 @@ class SocialAuth {
                 }
 
                 //twitter link
-                $this->user_data['twitter'] = 'http://twitter.com/'.$userInfo->screen_name;
+                $this->user_data['twitter'] = 'https://twitter.com/'.$userInfo->screen_name;
 
                 // echo 'result: <pre>' . print_r($this->user_data, 1) . print_r($res, true) . '</pre>';die;
 
@@ -378,7 +378,7 @@ class SocialAuth {
 					if($res->about) $this->user_data['about'] = $res->about;
 					if($res->location->name) $this->user_data['location'] = $res->location->name;
 					if($res->id) {
-						if($json = @json_decode(@file_get_contents('http://graph.facebook.com/' . $res->id . '/picture?type=large&redirect=false'))) {
+						if($json = @json_decode(@file_get_contents('https://graph.facebook.com/' . $res->id . '/picture?type=large&redirect=false'))) {
 							if($json->data && $json->data->url) {
 								$this->user_data['avatar'] = $json->data->url;
 								$this->user_data['avatar_name'] = basename(parse_url($json->data->url, PHP_URL_PATH));
@@ -616,7 +616,7 @@ class SocialAuth {
 					}
 					//mirar en gravatar si no tiene ninguna de social
 					else {
-						$url = 'http://www.gravatar.com/avatar/' . md5(strtolower(trim($user->email))) . '.jpg?s=400&d=404';
+						$url = 'https://www.gravatar.com/avatar/' . md5(strtolower(trim($user->email))) . '.jpg?s=400&d=404';
 						$img = new Image( $url , "$username.jpg");
 						$img->save($errors, false);
 						if($img->id) {
