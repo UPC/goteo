@@ -202,11 +202,6 @@ class SessionListener extends AbstractListener {
             $nodes[Lang::getUrl() . 'channel/' . $node->id] = $node->name;
         }
         Session::addToMainMenu('<i class="icon icon-channel"></i> ' . Text::get('home-channels-header'), $nodes, 'channels', 20, 'main');
-        // Default menus
-        Session::addToMainMenu('<i class="fa fa-search"></i> ' . Text::get('regular-discover'), Lang::getUrl() . 'discover', 'discover', 30, null, 'global-search');
-        Session::addToMainMenu('<i class="icon icon-drop"></i> ' . Text::get('regular-header-about'), Lang::getUrl() . 'blog', 'about', 40);
-        Session::addToMainMenu('<i class="fa fa-question-circle"></i> ' . Text::get('regular-faq'), Lang::getUrl() . 'faq', 'faq', 100);
-
 
         // Currencies
         $currencies = [];
