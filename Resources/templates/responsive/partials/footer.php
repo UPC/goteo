@@ -6,10 +6,10 @@ use Goteo\Application\Config;
 $user = $this->get_user();
 if ($user) {
     $encodedChatId = Config::get('chatbro.id');
-    $siteDomain = 'nexus24.dakara.ac.upc.edu';
+    $siteDomain = Config::get('chatbro.siteDomain');
     $siteUserExternalId = $user->id;
     $siteUserFullName = $user->name;
-    $siteUserProfileUrl = 'https://nexus24.dakara.ac.upc.edu/user/profile/' . $user->id;
+    $siteUserProfileUrl = 'https://' . $siteDomain . '/user/profile/' . $user->id;
     $siteUserAvatarUrl = $user->avatar->getLink(56, 56, true);
     $signature = md5(
         $siteDomain
