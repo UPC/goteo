@@ -47,7 +47,8 @@ ChatbroLoader({
     siteUserFullName: '<?= $siteUserFullName ?>',
     siteUserProfileUrl: '<?= $siteUserProfileUrl ?>',
     siteUserAvatarUrl: '<?= $siteUserAvatarUrl ?>',
-    signature: '<?= $signature ?>'
+    signature: '<?= $signature ?>',
+    showChatParticipants: true
 });
 </script>
       </div>
