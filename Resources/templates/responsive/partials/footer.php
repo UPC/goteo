@@ -9,7 +9,6 @@ if ($user) {
     $siteDomain = 'nexus24.dakara.ac.upc.edu';
     $siteUserExternalId = $user->id;
     $siteUserFullName = $user->name;
-    $chat_secret = Config::get('chatbro.secret');
     $siteUserProfileUrl = 'https://nexus24.dakara.ac.upc.edu/user/profile/' . $user->id;
     $siteUserAvatarUrl = $user->avatar->getLink(56, 56, true);
     $signature = md5(
