@@ -203,14 +203,6 @@ class SessionListener extends AbstractListener {
         }
         Session::addToMainMenu('<i class="icon icon-channel"></i> ' . Text::get('home-channels-header'), $nodes, 'channels', 20, 'main');
 
-        // Currencies
-        $currencies = [];
-        foreach(Currency::$currencies as $id => $c) {
-            if($id === $currency) continue;
-            $currencies['?currency=' . $id] = $c['html'] . ' ' .$c['name'];
-        }
-        Session::addToMainMenu('<i>' . Currency::get($currency, 'html') . '</i> ' . Currency::get($currency, 'name'), $currencies, 'currencies', 50, 'main');
-
         // Minimal User menu
         Session::addToUserMenu('<i class="icon icon-activity"></i> ' . Text::get('dashboard-menu-activity'), Lang::getUrl() . 'dashboard/activity', 'dashboard-activity', 20);
         Session::addToUserMenu('<i class="icon icon-projects"></i> ' . Text::get('dashboard-menu-projects'), Lang::getUrl() . 'dashboard/projects', 'dashboard-projects', 30);
