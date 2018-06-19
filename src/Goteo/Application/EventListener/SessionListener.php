@@ -184,7 +184,6 @@ class SessionListener extends AbstractListener {
             if($id === $currency) continue;
             $currencies['?currency=' . $id] = $c['html'] . ' ' .$c['name'];
         }
-        Session::addToMainMenu('<i>' . Currency::get($currency, 'html') . '</i> ' . Currency::get($currency, 'name'), $currencies, 'currencies', 50, 'main');
 
         // Minimal User menu
         Session::addToUserMenu('<i class="icon icon-activity"></i> ' . Text::get('dashboard-menu-activity'), '/dashboard/activity', 'dashboard-activity', 20);
