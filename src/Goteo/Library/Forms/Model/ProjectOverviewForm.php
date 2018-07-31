@@ -35,7 +35,7 @@ class ProjectOverviewForm extends AbstractFormProcessor implements FormProcessor
         if($field === 'description') {
             // Minimal 80 words
             $constraints[] = new Constraints\Regex([
-                'pattern' => '/^\s*\S+(?:\s+\S+){79,}\s*$/',
+                'pattern' => '/^\s*\S+(?:\s+\S+){0,}\s*$/',
                 'message' => Text::get('validate-project-field-description')
             ]);
         }

@@ -2027,7 +2027,7 @@ namespace Goteo\Model {
 
                 if (empty($this->description)) {
                     $errors['overview']['description'] = Text::get('mandatory-project-field-description');
-                } elseif (!Check::words($this->description, 80)) {
+                } elseif (!Check::words($this->description, 0)) {
                      $errors['overview']['description'] = Text::get('validate-project-field-description');
                 } else {
                      $okeys['overview']['description'] = 'ok';
