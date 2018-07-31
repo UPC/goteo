@@ -126,7 +126,7 @@ class ProjectValidationEvent extends \Goteo\Console\Event\FilterProjectEvent
         $count = 0;
         foreach($overview as $field) {
             if($field === 'description') {
-                if(preg_match('/^\s*\S+(?:\s+\S+){79,}\s*$/', $this->project->{$field})) {
+                if(preg_match('/^\s*\S+(?:\s+\S+){0,}\s*$/', $this->project->{$field})) {
                     continue;
                 }
             } elseif(!empty($this->project->{$field})) {
